@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -41,5 +42,12 @@ public class MainActivityTests {
     public void editTextShouldContainText() {
         onView(withId(R.id.txt_inputField)).perform(typeText(INPUT_TEXT), closeSoftKeyboard());
         onView(withId(R.id.txt_inputField)).check(matches(withText(INPUT_TEXT)));
+    }
+
+    @Test
+    public void inputTextWasSentToSecondActivity() {
+        onView(withId(R.id.txt_inputField)).perform(typeText(INPUT_TEXT), closeSoftKeyboard());
+        onView(withId(R.id.btn_submit)).perform(click());
+        onView(withId(R.id.txt_submitted)).check(matches(withText(INPUT_TEXT)));
     }
 }
