@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
@@ -25,6 +26,8 @@ public class MainActivityTests {
 
     private static final String INPUT_TEXT = "Espresso";
     private static final String INVALID_TEXT = "invalid";
+    private static final String SECOND_ACTIVITY_PACKAGE_NAME = "com.bromancelabs.espressodemo.activities.SecondActivity";
+    private static final String EXTRA_TEXT = "extra_text";
 
     @Rule
     public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
@@ -57,5 +60,18 @@ public class MainActivityTests {
         onView(withId(R.id.txt_inputField)).perform(typeText(INPUT_TEXT), closeSoftKeyboard());
         onView(withId(R.id.btn_submit)).perform(click());
         onView(withId(R.id.txt_submitted)).check(matches(withText(INPUT_TEXT)));
+    }
+
+    @Test
+    public void returnFromSecondActivity() {
+        onView(withId(R.id.txt_inputField)).perform(typeText(INPUT_TEXT), closeSoftKeyboard());
+        onView(withId(R.id.btn_submit)).perform(click());
+        onView(withId(R.id.txt_submitted)).check(matches(withText(INPUT_TEXT)));
+
+        pressBack();
+
+        onView(withId(R.id.txt_inputField)).check(ViewAssertions.matches(isDisplayed()));
+        onView(withId(R.id.txt_inputField)).check(matches(withText("")));
+        onView(withId(R.id.btn_submit)).check(ViewAssertions.matches(isDisplayed()));
     }
 }
