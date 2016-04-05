@@ -10,6 +10,7 @@ import com.bromancelabs.espressodemo.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         String text = inputEditText.getText().toString();
 
         if (!TextUtils.isEmpty(text)) {
-            
+            Timber.d("Submitted text: %s", text);
         }
     }
 }
