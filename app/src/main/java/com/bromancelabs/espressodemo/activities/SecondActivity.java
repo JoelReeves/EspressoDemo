@@ -11,6 +11,7 @@ import com.bromancelabs.espressodemo.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import timber.log.Timber;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -30,5 +31,13 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         ButterKnife.bind(this);
+
+        if (getIntent() != null && getIntent().getExtras() != null && !getIntent().getExtras().isEmpty()) {
+            Timber.d("Submit success");
+            String submittedText = getIntent().getStringExtra(EXTRA_TEXT);
+            submittedTextView.setText(submittedText);
+        } else {
+            Timber.d("Submit failure");
+        }
     }
 }
