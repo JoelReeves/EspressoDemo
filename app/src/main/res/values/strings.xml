@@ -4,4 +4,7 @@
     <!-- MainActivity -->
     <string name="inputField_hint">Enter text</string>
     <string name="submit">Submit</string>
+
+    <!-- SecondActivity -->
+    <string name="text_label">Submitted Text</string>
 </resources>
