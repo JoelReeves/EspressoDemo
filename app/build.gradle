@@ -25,6 +25,7 @@ android {
 }
 
 ext.androidSupportVersion = '23.2.1'
+ext.espressoVersion = '2.2.2'
 ext.testRulesVersion = '0.5'
 
 dependencies {
@@ -35,7 +36,8 @@ dependencies {
     compile 'com.jakewharton.timber:timber:4.1.2'
 
     // Testing dependencies
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    androidTestCompile "com.android.support.test.espresso:espresso-core:${espressoVersion}"
+    androidTestCompile "com.android.support.test.espresso:espresso-intents:${espressoVersion}"
     androidTestCompile "com.android.support:support-annotations:${androidSupportVersion}"
     androidTestCompile "com.android.support:support-v4:${androidSupportVersion}"
     androidTestCompile "com.android.support.test:runner:${testRulesVersion}"
