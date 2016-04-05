@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EspressoDemo</string>
+
+    <!-- MainActivity -->
+    <string name="inputField_hint">Enter text</string>
+    <string name="submit">Submit</string>
+</resources>
