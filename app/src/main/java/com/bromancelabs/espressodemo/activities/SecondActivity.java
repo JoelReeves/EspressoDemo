@@ -1,5 +1,7 @@
 package com.bromancelabs.espressodemo.activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +14,15 @@ import butterknife.ButterKnife;
 
 public class SecondActivity extends AppCompatActivity {
 
+    private static final String EXTRA_TEXT = "extra_text";
+
     @Bind(R.id.txt_submitted) TextView submittedTextView;
+
+    public static Intent newIntent(Context context, String text) {
+        Intent intent = new Intent(context, SecondActivity.class);
+        intent.putExtra(EXTRA_TEXT, text);
+        return intent;
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
