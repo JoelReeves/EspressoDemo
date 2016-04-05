@@ -4,6 +4,7 @@
     <!-- MainActivity -->
     <string name="inputField_hint">Enter text</string>
     <string name="submit">Submit</string>
+    <string name="snackbar_invalid_text">Please input some text.</string>
 
     <!-- SecondActivity -->
     <string name="text_label">Submitted Text</string>
