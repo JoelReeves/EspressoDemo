@@ -18,11 +18,13 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.not;
 
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTests {
 
     private static final String INPUT_TEXT = "Espresso";
+    private static final String INVALID_TEXT = "invalid";
 
     @Rule
     public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
@@ -42,6 +44,12 @@ public class MainActivityTests {
     public void editTextShouldContainText() {
         onView(withId(R.id.txt_inputField)).perform(typeText(INPUT_TEXT), closeSoftKeyboard());
         onView(withId(R.id.txt_inputField)).check(matches(withText(INPUT_TEXT)));
+    }
+
+    @Test
+    public void editTextShouldContainInvalidText() {
+        onView(withId(R.id.txt_inputField)).perform(typeText(INVALID_TEXT), closeSoftKeyboard());
+        onView(withId(R.id.txt_inputField)).check(matches(not(withText(INPUT_TEXT))));
     }
 
     @Test
