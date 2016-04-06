@@ -16,4 +16,12 @@
 
     <!-- SuperHeroActivity -->
     <string name="actionbar_hero_title">Superheroes</string>
+
+    <string-array name="heroes">
+        <item>Batman</item>
+        <item>Superman</item>
+        <item>Green Arrow</item>
+        <item>Flash</item>
+        <item>DareDevil</item>
+    </string-array>
 </resources>
