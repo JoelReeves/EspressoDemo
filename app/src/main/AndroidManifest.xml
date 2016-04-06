@@ -19,7 +19,10 @@
         </activity>
 
         <activity android:name=".activities.DisplayDataActivity"/>
-        <activity android:name=".activities.SuperHeroActivity"/>
+
+        <activity
+            android:name=".activities.SuperHeroActivity"
+            android:label="@string/actionbar_hero_title"/>
     </application>
 
 </manifest>

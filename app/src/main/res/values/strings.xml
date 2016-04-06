@@ -13,4 +13,7 @@
 
     <!-- DisplayDataActivity -->
     <string name="text_label">Submitted Text</string>
+
+    <!-- SuperHeroActivity -->
+    <string name="actionbar_hero_title">Superheroes</string>
 </resources>
