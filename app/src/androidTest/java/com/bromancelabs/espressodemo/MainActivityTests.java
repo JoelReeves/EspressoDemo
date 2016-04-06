@@ -4,7 +4,7 @@ import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.bromancelabs.espressodemo.activities.MainActivity;
+import com.bromancelabs.espressodemo.activities.FirstActivity;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -28,7 +28,7 @@ public class MainActivityTests {
     private static final String INVALID_TEXT = "invalid";
 
     @Rule
-    public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<FirstActivity> activityRule = new ActivityTestRule<>(FirstActivity.class);
 
     @Test
     public void shouldHaveEmptyEditTextField() {

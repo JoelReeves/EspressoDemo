@@ -2,7 +2,7 @@ package com.bromancelabs.espressodemo;
 
 import android.support.test.espresso.intent.rule.IntentsTestRule;
 
-import com.bromancelabs.espressodemo.activities.MainActivity;
+import com.bromancelabs.espressodemo.activities.FirstActivity;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -23,7 +23,7 @@ public class IntentTests {
     private static final String EXTRA_TEXT = "extra_text";
 
     @Rule
-    public IntentsTestRule<MainActivity> intentRule = new IntentsTestRule<>(MainActivity.class);
+    public IntentsTestRule<FirstActivity> intentRule = new IntentsTestRule<>(FirstActivity.class);
 
     @Test
     public void intentShouldHaveExtra() {

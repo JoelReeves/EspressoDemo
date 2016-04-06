@@ -13,14 +13,14 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import timber.log.Timber;
 
-public class MainActivity extends AppCompatActivity {
+public class FirstActivity extends AppCompatActivity {
 
     @Bind(R.id.txt_inputField) EditText inputEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_first);
 
         ButterKnife.bind(this);
     }
