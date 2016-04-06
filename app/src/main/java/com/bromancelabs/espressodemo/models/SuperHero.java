@@ -1,6 +1,10 @@
 package com.bromancelabs.espressodemo.models;
 
 public class SuperHero {
+    
+    public SuperHero(String name) {
+        this.name = name;
+    }
 
     private String name;
 
