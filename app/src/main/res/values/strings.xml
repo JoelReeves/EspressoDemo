@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">EspressoDemo</string>
 
+    <!-- Menu -->
+    <string name="menu_input_data_activity">Go to InputActivity</string>
+    <string name="menu_super_hero_activity">Go to SuperHeroActivity</string>
+
     <!-- InputDataActivity -->
+    <string name="actionbar_input_title">Input Data</string>
     <string name="inputField_hint">Enter text</string>
     <string name="submit">Submit</string>
     <string name="snackbar_invalid_text">Please input some text.</string>

@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.InputDataActivity">
+            android:name=".activities.InputDataActivity"
+            android:label="@string/actionbar_input_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -18,7 +19,7 @@
         </activity>
 
         <activity android:name=".activities.DisplayDataActivity"/>
-        <activity android:name=".activities.RecyclerViewActivity"/>
+        <activity android:name=".activities.SuperHeroActivity"/>
     </application>
 
 </manifest>
