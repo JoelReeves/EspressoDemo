@@ -26,8 +26,6 @@ public class MainActivityTests {
 
     private static final String INPUT_TEXT = "Espresso";
     private static final String INVALID_TEXT = "invalid";
-    private static final String SECOND_ACTIVITY_PACKAGE_NAME = "com.bromancelabs.espressodemo.activities.SecondActivity";
-    private static final String EXTRA_TEXT = "extra_text";
 
     @Rule
     public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
