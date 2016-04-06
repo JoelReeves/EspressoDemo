@@ -1,9 +1,12 @@
 package com.bromancelabs.espressodemo.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
 
 import com.bromancelabs.espressodemo.R;
@@ -23,6 +26,23 @@ public class InputDataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_input_data);
 
         ButterKnife.bind(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_input, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menuStartSuperHeroActivity:
+                startActivity(new Intent(this, SuperHeroActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @OnClick(R.id.btn_submit)
