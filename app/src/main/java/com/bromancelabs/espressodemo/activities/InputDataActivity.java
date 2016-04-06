@@ -13,14 +13,14 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import timber.log.Timber;
 
-public class FirstActivity extends AppCompatActivity {
+public class InputDataActivity extends AppCompatActivity {
 
     @Bind(R.id.txt_inputField) EditText inputEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first);
+        setContentView(R.layout.activity_input_data);
 
         ButterKnife.bind(this);
     }
@@ -32,7 +32,7 @@ public class FirstActivity extends AppCompatActivity {
         if (!TextUtils.isEmpty(text)) {
             Timber.d("Submitted text: %s", text);
             inputEditText.setText("");
-            startActivity(SecondActivity.newIntent(this, text));
+            startActivity(DisplayDataActivity.newIntent(this, text));
         } else {
             Snackbar.make(inputEditText, R.string.snackbar_invalid_text, Snackbar.LENGTH_SHORT).show();
         }

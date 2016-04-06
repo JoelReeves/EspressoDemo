@@ -13,14 +13,14 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import timber.log.Timber;
 
-public class SecondActivity extends AppCompatActivity {
+public class DisplayDataActivity extends AppCompatActivity {
 
     private static final String EXTRA_TEXT = "extra_text";
 
     @Bind(R.id.txt_submitted) TextView submittedTextView;
 
     public static Intent newIntent(Context context, String text) {
-        Intent intent = new Intent(context, SecondActivity.class);
+        Intent intent = new Intent(context, DisplayDataActivity.class);
         intent.putExtra(EXTRA_TEXT, text);
         return intent;
     }
@@ -28,7 +28,7 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_display_data);
 
         ButterKnife.bind(this);
 

@@ -3,10 +3,10 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <!-- FirstActivity -->
+    <!-- InputDataActivity -->
     <dimen name="submit_marginTop">30dp</dimen>
 
-    <!-- SecondActivity -->
+    <!-- DisplayDataActivity -->
     <dimen name="text_label_size">30sp</dimen>
     <dimen name="submitted_text_marginTop">40dp</dimen>
     <dimen name="submitted_text_size">20sp</dimen>

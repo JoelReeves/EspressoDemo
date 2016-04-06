@@ -4,7 +4,7 @@ import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.bromancelabs.espressodemo.activities.FirstActivity;
+import com.bromancelabs.espressodemo.activities.InputDataActivity;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -22,13 +22,13 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.not;
 
 @RunWith(AndroidJUnit4.class)
-public class MainActivityTests {
+public class InputDataActivityTests {
 
     private static final String INPUT_TEXT = "Espresso";
     private static final String INVALID_TEXT = "invalid";
 
     @Rule
-    public ActivityTestRule<FirstActivity> activityRule = new ActivityTestRule<>(FirstActivity.class);
+    public ActivityTestRule<InputDataActivity> activityRule = new ActivityTestRule<>(InputDataActivity.class);
 
     @Test
     public void shouldHaveEmptyEditTextField() {

@@ -3,7 +3,7 @@ package com.bromancelabs.espressodemo;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.bromancelabs.espressodemo.activities.SecondActivity;
+import com.bromancelabs.espressodemo.activities.DisplayDataActivity;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -16,10 +16,10 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 @RunWith(AndroidJUnit4.class)
-public class SecondActivityTests {
+public class DisplayDataActivityTests {
 
     @Rule
-    public ActivityTestRule<SecondActivity> activityRule = new ActivityTestRule<>(SecondActivity.class);
+    public ActivityTestRule<DisplayDataActivity> activityRule = new ActivityTestRule<>(DisplayDataActivity.class);
 
     @Test
     public void shouldHaveHeaderTextField() {
