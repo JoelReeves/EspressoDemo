@@ -38,5 +38,15 @@ public class SuperHeroActivityTests {
     public void recyclerViewShouldHaveDaredevilAsFifthItem() {
         onView(withId(R.id.recyclerView))
                 .check(matches(atPosition(DAREDEVIL_POSITION, hasDescendant(withText(DAREDEVIL)))));
+
+        /*
+
+        Or if the item you're looking for isn't visible on the screen, scroll to it first
+
+         onView(withId(R.id.recyclerView))
+            .perform(scrollToPosition(100))
+            .check(matches(atPosition(100, withText("Text You Are Looking For"))));
+
+         */
     }
 }
