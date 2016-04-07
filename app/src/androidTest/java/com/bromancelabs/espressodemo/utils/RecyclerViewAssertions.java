@@ -15,7 +15,7 @@ import org.hamcrest.TypeSafeMatcher;
 
 import static android.support.test.espresso.intent.Checks.checkNotNull;
 
-public class RecyclerViewUtils {
+public class RecyclerViewAssertions {
 
     public static Matcher<View> atPosition(final int position, @NonNull final Matcher<View> itemMatcher) {
         checkNotNull(itemMatcher);

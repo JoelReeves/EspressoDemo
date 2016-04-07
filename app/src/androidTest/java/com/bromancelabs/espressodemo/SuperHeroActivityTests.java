@@ -14,9 +14,9 @@ import static android.support.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static com.bromancelabs.espressodemo.utils.RecyclerViewUtils.atPosition;
-import static com.bromancelabs.espressodemo.utils.RecyclerViewUtils.hasItemsCount;
-import static com.bromancelabs.espressodemo.utils.RecyclerViewUtils.withName;
+import static com.bromancelabs.espressodemo.utils.RecyclerViewAssertions.atPosition;
+import static com.bromancelabs.espressodemo.utils.RecyclerViewAssertions.hasItemsCount;
+import static com.bromancelabs.espressodemo.utils.RecyclerViewAssertions.withName;
 
 public class SuperHeroActivityTests {
 
