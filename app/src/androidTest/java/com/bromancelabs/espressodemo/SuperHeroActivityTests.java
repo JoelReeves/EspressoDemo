@@ -15,6 +15,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.bromancelabs.espressodemo.utils.RecyclerViewUtils.atPosition;
+import static com.bromancelabs.espressodemo.utils.RecyclerViewUtils.hasItemsCount;
 import static com.bromancelabs.espressodemo.utils.RecyclerViewUtils.withName;
 
 public class SuperHeroActivityTests {
@@ -23,6 +24,7 @@ public class SuperHeroActivityTests {
     private static final String DAREDEVIL = "DareDevil";
     private static final String FLASH = "Flash";
     private static final int DAREDEVIL_POSITION = 4;
+    private static final int ITEM_COUNT = 5;
 
     @Rule
     public ActivityTestRule<SuperHeroActivity> activityRule = new ActivityTestRule<>(SuperHeroActivity.class);
@@ -30,6 +32,11 @@ public class SuperHeroActivityTests {
     @Test
     public void recyclerViewShouldBeVisible() {
         onView(withId(R.id.recyclerView)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void recyclerViewShouldHaveFiveItems() {
+        onView(withId(R.id.recyclerView)).check(matches(hasItemsCount(ITEM_COUNT)));
     }
 
     @Test

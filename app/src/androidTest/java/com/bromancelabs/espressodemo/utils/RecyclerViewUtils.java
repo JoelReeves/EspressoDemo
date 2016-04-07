@@ -56,4 +56,21 @@ public class RecyclerViewUtils {
             }
         };
     }
+
+    public static Matcher<View> hasItemsCount(final int finalCount) {
+        return new TypeSafeMatcher<View>() {
+            @Override
+            protected boolean matchesSafely(View item) {
+                RecyclerView recyclerView = (RecyclerView) item;
+
+                return recyclerView.getAdapter().getItemCount() == finalCount;
+
+            }
+
+            @Override
+            public void describeTo(Description description) {
+
+            }
+        };
+    }
 }
