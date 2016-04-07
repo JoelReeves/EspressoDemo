@@ -3,10 +3,15 @@ package com.bromancelabs.espressodemo.utils;
 import android.support.annotation.NonNull;
 import android.support.test.espresso.matcher.BoundedMatcher;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
+
+import com.bromancelabs.espressodemo.R;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
+import org.hamcrest.TypeSafeMatcher;
 
 import static android.support.test.espresso.intent.Checks.checkNotNull;
 
@@ -29,6 +34,25 @@ public class RecyclerViewUtils {
                     return false;
                 }
                 return itemMatcher.matches(viewHolder.itemView);
+            }
+        };
+    }
+
+    public static Matcher<View> withName(final String expectedName) {
+        return new TypeSafeMatcher<View>() {
+            @Override
+            protected boolean matchesSafely(View item) {
+                if (item != null && item.findViewById(R.id.txt_hero_name) != null) {
+                    TextView name = (TextView) item.findViewById(R.id.txt_hero_name);
+                    return !TextUtils.isEmpty(name.getText()) && name.getText().equals(expectedName);
+                } else {
+                    return false;
+                }
+            }
+
+            @Override
+            public void describeTo(Description description) {
+                description.appendText("found text: " + expectedName);
             }
         };
     }

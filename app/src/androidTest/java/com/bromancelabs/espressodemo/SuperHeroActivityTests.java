@@ -1,5 +1,6 @@
 package com.bromancelabs.espressodemo;
 
+import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.rule.ActivityTestRule;
 
 import com.bromancelabs.espressodemo.activities.SuperHeroActivity;
@@ -14,11 +15,13 @@ import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.bromancelabs.espressodemo.utils.RecyclerViewUtils.atPosition;
+import static com.bromancelabs.espressodemo.utils.RecyclerViewUtils.withName;
 
 public class SuperHeroActivityTests {
 
     private static final String BATMAN = "Batman";
     private static final String DAREDEVIL = "DareDevil";
+    private static final String FLASH = "Flash";
     private static final int DAREDEVIL_POSITION = 4;
 
     @Rule
@@ -48,5 +51,10 @@ public class SuperHeroActivityTests {
             .check(matches(atPosition(100, withText("Text You Are Looking For"))));
 
          */
+    }
+
+    @Test
+    public void recyclerViewCanScrollToFlashHero() {
+        onView(withId(R.id.recyclerView)).perform(RecyclerViewActions.scrollTo(withName(FLASH)));
     }
 }
