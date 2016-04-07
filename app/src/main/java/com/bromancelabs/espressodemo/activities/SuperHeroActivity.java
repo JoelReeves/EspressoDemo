@@ -65,7 +65,7 @@ public class SuperHeroActivity extends AppCompatActivity {
 
         Timber.d(heroList.toString());
 
-        HeroAdapter heroAdapter = new HeroAdapter(heroList);
+        HeroAdapter heroAdapter = new HeroAdapter(this, heroList);
 
         recyclerView.addItemDecoration(new SimpleDividerItemDecoration(this, R.drawable.recyclerview_horizontal_divider));
         recyclerView.setAdapter(heroAdapter);

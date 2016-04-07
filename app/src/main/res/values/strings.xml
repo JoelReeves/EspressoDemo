@@ -5,6 +5,9 @@
     <string name="menu_input_data_activity">Go to InputActivity</string>
     <string name="menu_super_hero_activity">Go to SuperHeroActivity</string>
 
+    <!-- SnackBar -->
+    <string name="no_network_error">Please check your network connection.</string>
+
     <!-- InputDataActivity -->
     <string name="actionbar_input_title">Input Data</string>
     <string name="inputField_hint">Enter text</string>
