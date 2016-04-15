@@ -55,9 +55,10 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.SuperHeroViewH
         private static final String GREEN_ARROW_URL = "https://en.wikipedia.org/wiki/Green_Arrow";
         private static final String FLASH_URL = "https://en.wikipedia.org/wiki/Flash_(comics)";
         private static final String DAREDEVIL_URL = "https://en.wikipedia.org/wiki/Daredevil_(Marvel_Comics)";
+        private String[] heroURLs = {BATMAN_URL, SUPERMAN_URL, GREEN_ARROW_URL, FLASH_URL, DAREDEVIL_URL};
 
         @Bind(R.id.txt_hero_name) TextView heroName;
-
+        
         public SuperHeroViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -69,43 +70,10 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.SuperHeroViewH
 
         @OnClick(R.id.txt_hero_name)
         public void heroClicked() {
-
-            switch (getLayoutPosition()) {
-                case 0:
-                    if (NetworkUtils.isNetworkAvailable(context)) {
-                        UriUtils.goToURI(context, BATMAN_URL);
-                    } else {
-                        showNetworkError();
-                    }
-                    break;
-                case 1:
-                    if (NetworkUtils.isNetworkAvailable(context)) {
-                        UriUtils.goToURI(context, SUPERMAN_URL);
-                    } else {
-                        showNetworkError();
-                    }
-                    break;
-                case 2:
-                    if (NetworkUtils.isNetworkAvailable(context)) {
-                        UriUtils.goToURI(context, GREEN_ARROW_URL);
-                    } else {
-                        showNetworkError();
-                    }
-                    break;
-                case 3:
-                    if (NetworkUtils.isNetworkAvailable(context)) {
-                        UriUtils.goToURI(context, FLASH_URL);
-                    } else {
-                        showNetworkError();
-                    }
-                    break;
-                case 4:
-                    if (NetworkUtils.isNetworkAvailable(context)) {
-                        UriUtils.goToURI(context, DAREDEVIL_URL);
-                    } else {
-                        showNetworkError();
-                    }
-                    break;
+            if (NetworkUtils.isNetworkAvailable(context)) {
+                UriUtils.goToURI(context, heroURLs[getLayoutPosition()]);
+            } else {
+                showNetworkError();
             }
         }
 
